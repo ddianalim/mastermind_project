@@ -15,6 +15,7 @@ class Code
     return true
   end
 
+  attr_reader :pegs
   def initialize(arr)
     if Code.valid_pegs?(arr)
       @pegs = arr.map(&:upcase)
@@ -22,4 +23,6 @@ class Code
       raise "array does not contain valid pegs"
     end
   end
+
+
 end
