@@ -17,7 +17,7 @@ class Code
 
   def initialize(arr)
     if Code.valid_pegs?(arr)
-      @pegs = arr.upcase
+      @pegs = arr.map(&:upcase)
     else
       raise "array does not contain valid pegs"
     end
