@@ -24,5 +24,12 @@ class Code
     end
   end
 
-
+  def self.random(length)
+    new_arr = []
+    letters = ["R", "G", "B", "Y"]
+    length.times do
+      new_arr << POSSIBLE_PEGS[ letters[rand(3)] ]
+    end
+    Code.new(new_arr)
+  end
 end
