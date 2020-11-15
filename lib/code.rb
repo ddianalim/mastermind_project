@@ -1,3 +1,5 @@
+require "byebug"
+
 class Code
   POSSIBLE_PEGS = {
     "R" => :red,
@@ -26,9 +28,10 @@ class Code
 
   def self.random(length)
     new_arr = []
+    # debugger
     letters = ["R", "G", "B", "Y"]
     length.times do
-      new_arr << POSSIBLE_PEGS[ letters[rand(3)] ]
+      new_arr << letters[rand(3)]
     end
     Code.new(new_arr)
   end
