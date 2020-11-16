@@ -29,7 +29,6 @@ class Code
 
   def self.random(length)
     new_arr = []
-    # debugger
     letters = ["R", "G", "B", "Y"]
     length.times do
       new_arr << letters[rand(3)]
