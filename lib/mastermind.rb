@@ -15,6 +15,6 @@ class Mastermind
         code = gets.chomp
         Code.from_string(code)
         print_matches(code)
-        @secret_code == code
+        code == @secret_code
     end
 end
