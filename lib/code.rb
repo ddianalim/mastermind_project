@@ -18,6 +18,7 @@ class Code
   end
 
   attr_reader :pegs
+
   def initialize(arr)
     if Code.valid_pegs?(arr)
       @pegs = arr.map(&:upcase)
@@ -34,5 +35,17 @@ class Code
       new_arr << letters[rand(3)]
     end
     Code.new(new_arr)
+  end
+
+  def self.from_string(pegs)
+    Code.new(pegs.split(""))
+  end
+
+  def [](index)
+    @pegs[index]
+  end
+
+  def length
+    @pegs.length
   end
 end
