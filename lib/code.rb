@@ -59,7 +59,20 @@ class Code
     matches
   end
 
-  def num_near_matches
-
+  def num_near_matches(guess)
+    near_matches = 0
+    i = 0
+    while i < 4
+      if @pegs.include?(guess[i])
+        near_matches += 1 
+      end
+    i += 1
+    end   
+    near_matches - num_exact_matches(guess)
   end
+
+  # def ==(code)
+  #   return false if !code.length == self.length
+  #   self == code
+  # end
 end
