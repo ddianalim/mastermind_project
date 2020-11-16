@@ -6,15 +6,14 @@ class Mastermind
     end
 
     def print_matches(code)
-        p @secret_code.num_exact_matches(code)
-        p @secret_code.num_near_matches(code)
+        puts "exact matches: #{@secret_code.num_exact_matches(code)}"
+        puts "near matches: #{@secret_code.num_near_matches(code)}"
     end
 
     def ask_user_for_guess
         p "Enter a code"
-        code = gets.chomp
-        Code.from_string(code)
-        print_matches(code)
-        code == @secret_code
+        code = Code.from_string(gets.chomp)
+        self.print_matches(code)
+        @secret_code == code
     end
 end
