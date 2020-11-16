@@ -71,8 +71,11 @@ class Code
     near_matches - num_exact_matches(guess)
   end
 
-  # def ==(code)
-  #   return false if !code.length == self.length
-  #   self == code
-  # end
+  def ==(code)
+    if code.length == self.length
+      return num_exact_matches(code) == self.length
+    else
+      return false
+    end
+  end
 end
